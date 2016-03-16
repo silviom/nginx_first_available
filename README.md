@@ -13,11 +13,22 @@ tar zxvf nginx-VERSION.tar.gz
 cd nginx-VERSION
 ```
 
-##### To build as a static module:
+##### To build it as a static module:
 ```
 ./configure --add-module=/path/to/nginx_first_available_folder
 make
 make install
+```
+
+##### To build it as a dynamic module:
+```
+./configure --add-dynamic-module=/path/to/nginx_first_available_folder
+make
+```
+
+`make` will produce the file `objs/ngx_stream_upstream_first_available_module.so`. It should be copied to your nginx's modules folder. By last, you should add the following line to the `nginx.conf` file:
+```
+load_module modules/ngx_stream_upstream_first_available_module.so;
 ```
 
 ## Example Usage:
