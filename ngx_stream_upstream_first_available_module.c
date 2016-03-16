@@ -101,7 +101,6 @@ ngx_stream_upstream_get_first_available_peer(ngx_peer_connection_t *pc, void *da
 
     time_t                           now;
     uintptr_t                        m;
-    ngx_int_t                        rc;
     ngx_uint_t                       i, n, p;
     ngx_stream_upstream_rr_peer_t   *peer, *best;
     ngx_stream_upstream_rr_peers_t  *peers;
